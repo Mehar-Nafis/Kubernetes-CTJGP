@@ -71,6 +71,7 @@ kubectl get pods
 ```
 kubectl exec -it <pod_name> -- /bin/bash
 ```
+```
 nginx -v
 ```
 ```
