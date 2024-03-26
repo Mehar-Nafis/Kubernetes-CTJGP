@@ -53,7 +53,6 @@ spec:
         requests:
           storage: 1Gi
 ```
-```
 Create a Stateful Set and  headless service by applying the yaml
 ```
 kubectl apply -f nginx-sts.yaml
