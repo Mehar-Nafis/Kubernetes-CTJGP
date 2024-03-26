@@ -67,7 +67,7 @@ Now ssh into the Node on which the particular pod( in which you went inside and 
 ```
 ssh ubuntu@<External-IP>
 ```
-Navigate to the SOurce location. In this case /data
+Navigate to the Source location. In this case /data
 ```
 cd /data
 ```
