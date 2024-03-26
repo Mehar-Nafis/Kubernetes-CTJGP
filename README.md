@@ -17,6 +17,6 @@
 * [Lab-4: Deployment](https://github.com/Mehar-Nafis/CTJGP-Batch15-K8S/blob/main/Deployment.md)
 * [Lab-5: DaemonSet](https://github.com/Mehar-Nafis/CTJGP-Batch15-K8S/blob/main/DaemonSet.md)
 * [Lab-6: HostPath and EmptyDir](https://github.com/Mehar-Nafis/CTJGP-Batch15-K8S/blob/main/hostPath%20and%20emptyDir.md)
-* [Lab-7: Persistent Volume](https://github.com/Mehar-Nafis/CTJGP-Batch15-K8S/blob/main/Persistent%20Volume.md)
+* [Lab-7: Persistent Volume and Persistent Volume Claim](https://github.com/Mehar-Nafis/CTJGP-Batch15-K8S/blob/main/Persistent%20Volume%20and%20Persistent%20Volume%20Claim.md)
 * [Reference Links](https://github.com/Mehar-Nafis/CTJGP-Batch15-K8S/blob/main/Reference%20Links.md)
 
