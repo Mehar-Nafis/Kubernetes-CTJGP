@@ -49,6 +49,7 @@ Access shell on a container running in your Pod to verify volume
 ```
 kubectl exec -it <pod-name> -- /bin/bash
 ```
+Go to /data, add a file. come out, de;ete the pod, ssh into your node, and go and check in the /data directory of that node.
 
 ## Task 2 : Creating Deployment with emptyDir
 Create a file named mydep-empty.yaml using content given below
