@@ -1,9 +1,58 @@
 ## StatefulSet
 
 ### Task 1: Create Stateful Set
-Download file with yaml definition for an nginx Stateful Set 
+Create the yaml definition for an nginx Stateful Set 
 ```
-wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/kubernetes-essentials/nginx-sts.yaml
+vi nginx-sts.yaml
+```
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+  labels:
+    app: nginx-svc
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+  selector:
+    app: nginx-sts
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nginx-sts
+spec:
+  serviceName: nginx-svc
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-sts
+  template:
+    metadata:
+      labels:
+        app: nginx-sts
+    spec:
+      containers:
+      - name: nginx
+        image: k8s.gcr.io/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+```
 ```
 Create a Stateful Set and  headless service by applying the yaml
 ```
