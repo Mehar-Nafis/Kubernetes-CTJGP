@@ -1,4 +1,4 @@
-## Persistent Volume in Kubernetes: Static Provisioning
+## Static Provisioning
 
 ### Task 1: Get Node Label and Create Custom Index.html on Node
 View worker nodes and their labels
@@ -131,7 +131,7 @@ kubectl delete -f pv-claim.yaml
 kubectl delete -f pv-volume.yaml
 ```
 
-## Persistent Volume in Kubernetes: Dynamic Provisioning
+## Dynamic Provisioning
 Creating pvc 
 ```
 vi pv-claim.yaml
