@@ -1,5 +1,4 @@
 ## Task 1: Creating Deployment with hostPath
---------------------------------------------------------------------------
 Create a file named mydep-hp.yaml using the content given below
 ```
 vi mydep-hp.yaml
