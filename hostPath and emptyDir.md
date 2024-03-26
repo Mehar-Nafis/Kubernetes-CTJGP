@@ -40,8 +40,9 @@ View the objects created by Kubernetes Deployment and verify hostPath mounting i
 kubectl get deployments
 ```
 ```
-kubectl get pods
+kubectl get pods -o wide
 ```
+From the above take a note on which pods are running on which particular node, as this would be required in the below steps.
 ```
 kubectl describe pod <pod-name>
 ```
@@ -49,7 +50,38 @@ Access shell on a container running in your Pod to verify volume
 ```
 kubectl exec -it <pod-name> -- /bin/bash
 ```
-Go to /data, add a file. come out, de;ete the pod, ssh into your node, and go and check in the /data directory of that node.
+```
+cd /data
+```
+```
+echo `Welcome to DevOps Training` > index.html
+```
+```
+exit
+```
+Now delete your deployment
+```
+kubectl delete -f mydep-hp.yaml --force
+```
+Now ssh into the Node on which the particular pod( in which you went inside and created the index.html file) was running.
+```
+ssh ubuntu@<External-IP>
+```
+Navigate to the SOurce location. In this case /data
+```
+cd /data
+```
+```
+ls -la
+```
+You would see the index.html file still existing
+```
+cat index.html
+```
+```
+exit
+```
+
 
 ## Task 2 : Creating Deployment with emptyDir
 Create a file named mydep-empty.yaml using content given below
