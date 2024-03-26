@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: fluentd-ctr
-        image: fluent/fluentd
+        image: nginx
 ```
 Apply the yaml definition to create a fluent-ds DaemonSet
 ```
