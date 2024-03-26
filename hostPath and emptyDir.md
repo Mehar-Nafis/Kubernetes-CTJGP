@@ -112,7 +112,7 @@ kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
 ```
 kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
 ```
-3# Task 3: Cleanup the resources using the below command
+## Task 3: Cleanup the resources using the below command
 Delete the resources created during the lab:
 ```
 kubectl delete -f mydep-empty.yaml
