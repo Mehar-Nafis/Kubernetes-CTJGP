@@ -78,7 +78,6 @@ kubectl get pvc -l app=nginx-sts
 ```
 
 ### Task 3: Cleanup the resources using below command 
---------------------------------------------------------------------------------
 Delete a Stateful Set
 ```
 kubectl delete -f nginx-sts.yaml
