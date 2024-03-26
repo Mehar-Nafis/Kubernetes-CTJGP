@@ -1,11 +1,10 @@
-# Task 1 : Creating Deployment with hostPath
+## Task 1: Creating Deployment with hostPath
 --------------------------------------------------------------------------
-## Create a file named mydep-hp.yaml using content given below
+Create a file named mydep-hp.yaml using the content given below
 ```
 vi mydep-hp.yaml
 ```
-## Paste the following content into the file:
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,12 +32,11 @@ spec:
         hostPath:
           path: /data
   ```
-## Save and exit the editor
-## Apply the Deployment yaml created in the previous step
+Save and exit the editor and Apply the Deployment yaml created in the previous step
 ```
 kubectl apply -f mydep-hp.yaml
 ```
-## View the objects created by Kubernetes Deployment and verify hostPath mounting in POD
+View the objects created by Kubernetes Deployment and verify hostPath mounting in POD
 ```
 kubectl get deployments
 ```
@@ -48,19 +46,18 @@ kubectl get pods
 ```
 kubectl describe pod <pod-name>
 ```
-## Access shell on a container running in your Pod to verify volume
+Access shell on a container running in your Pod to verify volume
 ```
 kubectl exec -it <pod-name> -- /bin/bash
 ```
 
-# Task 2 : Creating Deployment with emptyDir
---------------------------------------------------------------------------
-## Create a file named mydep-empty.yaml using content given below
+## Task 2 : Creating Deployment with emptyDir
+Create a file named mydep-empty.yaml using content given below
 ```
 vi mydep-empty.yaml
 ```
-## Paste the following content into the file:
-```
+Paste the following content into the file:
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -94,12 +91,12 @@ spec:
       - name: empty-vol
         emptyDir: {}
   ```
-## Save and exit the editor
-## Apply the Deployment yaml created in the previous step
+Save and exit the editor
+Apply the Deployment yaml created in the previous step
 ```
 kubectl apply -f mydep-empty.yaml
 ```
-## View the objects created by Kubernetes Deployment and verify hostPath mounting in POD
+View the objects created by Kubernetes Deployment and verify hostPath mounting in POD
 ```
 kubectl get deployments
 ```
@@ -109,16 +106,15 @@ kubectl get pods
 ```
 kubectl describe pod <pod-name>
 ```
-## Access shell on a container running in your Pod to verify volume
+Access shell on a container running in your Pod to verify volume
 ```
 kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
 ```
 ```
 kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
 ```
-# Task 3 Cleanup the resources using below command
------------------------------------------------------------------------------
-## Delete the resources created during the lab:
+3# Task 3: Cleanup the resources using the below command
+Delete the resources created during the lab:
 ```
 kubectl delete -f mydep-empty.yaml
 ```
