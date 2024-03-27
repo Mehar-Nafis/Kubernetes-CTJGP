@@ -49,3 +49,8 @@ Run the below command if you are not able to retrieve the data. The below comman
 ```
 kops export kubeconfig --admin
 ```
+
+### Delete the Cluster
+```
+kops delete cluster --name <cluster-naame> --state s3://<cluster-naame> --yes
+```
