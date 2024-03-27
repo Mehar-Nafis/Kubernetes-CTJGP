@@ -107,16 +107,6 @@ Access shell on a container running in your Pod
 ```
 kubectl exec -it pv-pod -- /bin/bash
 ```
-Run the following commands in the container to verify PersistentVolume
-```
-apt-get update
-```
-```
-apt-get install curl -y
-```
-```
-curl localhost
-```
 ```
 exit
 ```
